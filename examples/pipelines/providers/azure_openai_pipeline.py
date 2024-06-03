@@ -61,6 +61,7 @@ class Pipeline:
             )
             r.raise_for_status()
             if body["stream"]:
+                print("stream is true")
                 return r.iter_lines()
             else:
                 return r['message']['content']
