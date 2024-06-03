@@ -64,7 +64,7 @@ class Pipeline:
             print(response)
             if body["stream"]:
                 print("stream is true")
-                return response.iter_lines()
+                return response
             else:
                 return response
         except Exception as e:
