@@ -62,7 +62,12 @@ class Pipeline:
             r.raise_for_status()
             response = r.json()
             print(response)
-            choices = response.choices
+            if 'choices' in response:
+                choices = response['choices']
+                r_str = choices[0]['message']['content']
+                print(r_str)
+            else:
+                print("The response does not contain 'choices'.")
             r_str = choices[0]['message']['content']
             print(r_str)
             if body["stream"]:
