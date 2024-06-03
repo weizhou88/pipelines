@@ -64,4 +64,5 @@ class Pipeline:
             else:
                 return r.json()
         except Exception as e:
+            print(e)
             return f"Error here: {e}"
