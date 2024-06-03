@@ -77,5 +77,4 @@ class Pipeline:
                 print("stream is not true")
                 return r_str
         except Exception as e:
-            print("error wei:")
             return f"Error here: {e}"
