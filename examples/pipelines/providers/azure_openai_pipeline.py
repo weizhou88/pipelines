@@ -55,7 +55,7 @@ class Pipeline:
             
             r = requests.post(
                 url=url,
-                json=messages,
+                json={'messages': messages},
                 headers=headers,
                 stream=True,
             )
