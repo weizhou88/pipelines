@@ -52,13 +52,13 @@ class Pipeline:
 
         try:
             print(body)
+            
             r = requests.post(
                 url=url,
-                json=body['messages'],
+                json=messages,
                 headers=headers,
                 stream=True,
             )
-
             r.raise_for_status()
             if body["stream"]:
                 return r.iter_lines()
