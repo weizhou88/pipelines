@@ -48,12 +48,13 @@ class Pipeline:
             "Content-Type": "application/json",
         }
 
-        url = f"{self.valves.AZURE_OPENAI_ENDPOINT}/openai/deployments/{self.valves.DEPLOYMENT_NAME}/completions?api-version={self.valves.API_VERSION}"
+        url = f"{self.valves.AZURE_OPENAI_ENDPOINT}/openai/deployments/{self.valves.DEPLOYMENT_NAME}/chat/completions?api-version={self.valves.API_VERSION}"
 
         try:
+            print(body)
             r = requests.post(
                 url=url,
-                json={**body, "model": self.valves.MODEL},
+                json={**body},
                 headers=headers,
                 stream=True,
             )
