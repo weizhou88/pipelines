@@ -64,9 +64,9 @@ class Pipeline:
             print(response)
             if body["stream"]:
                 print("stream is true")
-                return response['message']['content']
+                return response['choices'][0]['message']['content']
             else:
-                return response['message']['content']
+                return response['choices'][0]['message']['content']
         except Exception as e:
             print("error wei:")
             return f"Error here: {e}"
