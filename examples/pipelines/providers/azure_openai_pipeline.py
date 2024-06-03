@@ -63,7 +63,7 @@ class Pipeline:
             if body["stream"]:
                 return r.iter_lines()
             else:
-                return r.json()
+                return r['message']['content']
         except Exception as e:
             print("error wei:")
             return f"Error here: {e}"
