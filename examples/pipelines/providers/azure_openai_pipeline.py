@@ -60,11 +60,12 @@ class Pipeline:
                 stream=True,
             )
             r.raise_for_status()
+            response = r['message']['content']
             if body["stream"]:
                 print("stream is true")
-                return r.iter_lines()
+                return response.iter_lines()
             else:
-                return r['message']['content']
+                return response
         except Exception as e:
             print("error wei:")
             return f"Error here: {e}"
