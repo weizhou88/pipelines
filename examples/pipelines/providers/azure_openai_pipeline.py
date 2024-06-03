@@ -62,7 +62,8 @@ class Pipeline:
             r.raise_for_status()
             response = r.json()
             print(response)
-            r_str = response['choices'][0]['message']['content']
+            choices = response.choices
+            r_str = choices[0]['message']['content']
             print(r_str)
             if body["stream"]:
                 print("stream is true")
