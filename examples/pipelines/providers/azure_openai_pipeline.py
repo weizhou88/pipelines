@@ -64,4 +64,4 @@ class Pipeline:
             else:
                 return r.json()
         except Exception as e:
-            return f"Error: {e}"
+            return f"Error here: {e}"
